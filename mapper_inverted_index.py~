@@ -1,0 +1,20 @@
+#!/usr/bin/python
+
+import sys
+import csv
+import re
+
+def mapper():
+    reader = csv.reader(sys.stdin, delimiter='\t')
+    writer = csv.writer(sys.stdout, delimiter='\t', quotechar='"', quoting=csv.QUOTE_ALL)
+    for line in reader:
+    	#id,ttl,tgnmes,authr_id,body,node,prnt_id,abs_parent,added,scr,state,lst_edited,lst_activity,lst_actvty_at,active_revsn,extra,extra_ref,extra_count,marked=line
+	data=line[3]
+	print data
+    #for element in re.split(r'[,.!?:;"()<>\[\]#$=\-/\s]',body):
+            #print "{0}\t{1}".format(id, element)
+
+def main():
+    mapper()
+
+main()
